@@ -5,7 +5,9 @@ import PropTypes from 'prop-types';
 const ListItem = ({singleMedia}) => {
   return (
     <TouchableOpacity style={styles.item}>
-      <Image style={styles.image} source={{uri: singleMedia.thumbnails.w160}}/>
+      <Image
+        style={styles.image}
+        source={{uri: `http://media.mw.metropolia.fi/wbma/uploads/${singleMedia.thumbnails.w160}`}}/>
       <View style={styles.textsContainer}>
         <Text style={styles.title}>{singleMedia.title}</Text>
         <Text style={styles.description}>{singleMedia.description}</Text>

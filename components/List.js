@@ -1,24 +1,10 @@
 import {FlatList} from 'react-native';
 import ListItem from './ListItem';
-import React, {useEffect, useState} from 'react';
-
-const url = 'https://raw.githubusercontent.com/mattpe/wbma/master/docs/assets/test.json';
+import React from 'react';
+import {useLoadMedia} from '../hooks/ApiHooks';
 
 const List = () => {
-  const [mediaArray, setMediaArray] = useState([]);
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch(url);
-        const json = await response.json();
-        setMediaArray(json);
-      } catch (e) {
-        console.log(e);
-      }
-    };
-    fetchData();
-  }, []);
-
+  const mediaArray = useLoadMedia();
   return (
     <FlatList
       data={mediaArray}
