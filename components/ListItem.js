@@ -32,7 +32,6 @@ const styles = StyleSheet.create({
 
 ListItem.propTypes = {
   singleMedia: PropTypes.exact({
-    key: PropTypes.string,
     title: PropTypes.string,
     description: PropTypes.string,
     thumbnails: PropTypes.exact({w160: PropTypes.string}),
