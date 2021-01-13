@@ -10,7 +10,7 @@ const ListItem = ({singleMedia}) => {
         source={{uri: `http://media.mw.metropolia.fi/wbma/uploads/${singleMedia.thumbnails.w160}`}}/>
       <View style={styles.textsContainer}>
         <Text style={styles.title}>{singleMedia.title}</Text>
-        <Text style={styles.description}>{singleMedia.description}</Text>
+        <Text>{singleMedia.description}</Text>
       </View>
     </TouchableOpacity>
   );
@@ -18,18 +18,19 @@ const ListItem = ({singleMedia}) => {
 
 const styles = StyleSheet.create({
   item: {
-    flex: 1, flexDirection: 'row',
-    padding: 16, alignItems: 'stretch',
-    backgroundColor: '#cccccc',
-    marginBottom: 2,
+    flex: 1, flexDirection: 'row', padding: 16, alignItems: 'stretch',
+    backgroundColor: 'lightgrey', marginTop: 16, marginStart: 16, marginEnd: 16,
+    elevation: 2,
   },
-  image: {width: 150, height: 250},
+  image: {
+    width: 150, height: 150, borderRadius: 75,
+    alignSelf: 'center', borderWidth: 2, borderColor: 'black',
+  },
   textsContainer: {
     marginStart: 16, flexDirection: 'column',
     flexShrink: 1,
   },
-  title: {fontWeight: 'bold', flex: 1},
-  description: {flex: 1},
+  title: {fontWeight: 'bold', color: 'darkorange', fontSize: 20},
 });
 
 ListItem.propTypes = {
